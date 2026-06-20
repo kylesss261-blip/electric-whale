@@ -159,13 +159,34 @@ chat.innerHTML +=
     input.value +
     "</div>";
 
-chat.innerHTML +=
-    "<div class='message ai-message'>I received: " +
-    input.value +
-    "</div>";        
-    input.value = "";
+let userText = input.value;
+let response = "";
+
+if (userText.toLowerCase().includes("hello") || userText.toLowerCase().includes("hi")) {
+    response = "Hey there! 👋";
 }
-</script>
+else if (userText.toLowerCase().includes("how are you")) {
+    response = "I'm doing great! 😎";
+}
+else if (userText.toLowerCase().includes("your name")) {
+    response = "My name is Electric Whale 🐋";
+}
+else if (userText.toLowerCase().includes("bye")) {
+    response = "See you later! 👋";
+}
+else {
+    response = "I don't understand that yet 🤔";
+}
+
+chat.innerHTML +=
+    "<div class='message ai-message'>" +
+    response +
+    "</div>";
+
+
+    
+
+    
 <script>
 function toggleMenu() {
   const menu = document.getElementById("menu");
